@@ -13,7 +13,7 @@ export default function Home() {
   const [isThemeChecked, setIsThemeChecked] = useState<boolean>(false);
   const [isLanguageChecked, setIsLanguageChecked] = useState<boolean>(false);
   
-  const handleIsThemeCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleIsThemeCheck = (e: {target: {value: boolean | string}} | React.ChangeEvent<HTMLInputElement>) => {
     const value: boolean = e.target.value ? !!(e.target.value) === true : false;
     setIsThemeChecked(value);
     if (value) {
@@ -23,7 +23,7 @@ export default function Home() {
     }
   };
 
-  const handleIsLanguageCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleIsLanguageCheck = (e: {target: {value: boolean | string}} | React.ChangeEvent<HTMLInputElement>) => {
     const value: boolean = e.target.value ? !!(e.target.value) === true : false;
     setIsLanguageChecked(value);
     if (value) {
