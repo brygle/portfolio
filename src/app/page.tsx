@@ -13,18 +13,20 @@ export default function Home() {
   const [isThemeChecked, setIsThemeChecked] = useState<boolean>(false);
   const [isLanguageChecked, setIsLanguageChecked] = useState<boolean>(false);
   
-  const handleIsThemeCheck = (e: any) => {
-    setIsThemeChecked(e.value);
-    if (e.value) {
+  const handleIsThemeCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value: boolean = e.target.value ? !!(e.target.value) === true : false;
+    setIsThemeChecked(value);
+    if (value) {
       dispatch(setDark());
     } else {
       dispatch(setLight());
     }
   };
 
-  const handleIsLanguageCheck = (e: any) => {
-    setIsLanguageChecked(e.value);
-    if (e.value) {
+  const handleIsLanguageCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value: boolean = e.target.value ? !!(e.target.value) === true : false;
+    setIsLanguageChecked(value);
+    if (value) {
       dispatch(setEnglish());
     } else {
       dispatch(setSpanish());
@@ -36,14 +38,14 @@ export default function Home() {
   const dispatch = useAppDispatch()
 
   useEffect(() => {
-    handleIsThemeCheck({value: theme === THEMENAME.DARK});
-    handleIsLanguageCheck({value: language === LANG.EN});
+    handleIsThemeCheck({target : {value: theme === THEMENAME.DARK}});
+    handleIsLanguageCheck({target: {value: language === LANG.EN}});
   }, []);
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <div>
-        <InputSwitch checked={isThemeChecked} onChange={handleIsThemeCheck} /> 
+        <InputSwitch checked={isThemeChecked} onChange={handleIsThemeCheck } /> 
         <div>Tema: {theme} </div>
       </div>
       <div>
