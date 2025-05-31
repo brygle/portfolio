@@ -7,17 +7,17 @@ const initialState = {
 
 export const themeSlice = createSlice({
     name: "theme",
-    initialState: localStorage.getItem('theme') ? { themeName: localStorage.getItem('theme') } : initialState,
+    initialState: window?.localStorage.getItem('theme') ? { themeName: window?.localStorage.getItem('theme') } : initialState,
     reducers: {
         setLight: (state) => {
             state.themeName = THEMENAME.LIGHT
-            localStorage.setItem('theme', THEMENAME.LIGHT);
+            window?.localStorage.setItem('theme', THEMENAME.LIGHT);
             document.documentElement.classList.remove('dark');
             document.documentElement.classList.add('light');
         },
         setDark: (state) => {
             state.themeName = THEMENAME.DARK
-            localStorage.setItem('theme', THEMENAME.DARK);
+            window?.localStorage.setItem('theme', THEMENAME.DARK);
             document.documentElement.classList.remove('light');
             document.documentElement.classList.add('dark');
         }

@@ -6,8 +6,10 @@ import { LANG } from '@/utils/const/lang';
 import { THEMENAME } from '@/utils/const/theme';
 import { InputSwitch } from 'primereact/inputswitch';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function Home() {
+  const { t } = useTranslation();
   const [isThemeChecked, setIsThemeChecked] = useState<boolean>(false);
   const [isLanguageChecked, setIsLanguageChecked] = useState<boolean>(false);
   
@@ -28,12 +30,6 @@ export default function Home() {
       dispatch(setSpanish());
     }
   };
-  const handleIsLanguageCheckReload = (e: any) => {
-    handleIsLanguageCheck(e);
-    setTimeout(() => {
-      location.reload();
-    } , 500)
-  };
 
   const theme = useAppSelector(state => state.themeReducer.themeName )
   const language = useAppSelector(state => state.langReducer.lang )
@@ -51,9 +47,10 @@ export default function Home() {
         <div>Tema: {theme} </div>
       </div>
       <div>
-        <InputSwitch checked={isLanguageChecked} onChange={handleIsLanguageCheckReload} /> 
+        <InputSwitch checked={isLanguageChecked} onChange={handleIsLanguageCheck} /> 
         <div>Idioma: {language} </div>
       </div>
+      <p>{t('Welcome to React')}</p>
     </div>
   );
 }

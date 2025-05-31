@@ -1,21 +1,24 @@
 import { LANG } from '@/utils/const/lang';
 import { createSlice } from '@reduxjs/toolkit';
+import i18next from '@/utils/i18n/i18n'
 
 const initialState = {
-    lang: LANG.ES
+    lang: LANG.EN
 }
 
 export const langSlice = createSlice({
     name: "lang",
-    initialState: localStorage.getItem('lang') ? { lang: localStorage.getItem('lang') } : initialState,
+    initialState: window?.localStorage.getItem('lang') ? { lang: window?.localStorage.getItem('lang') } : initialState,
     reducers: {
         setSpanish: (state) => {
             state.lang = LANG.ES;
-            localStorage.setItem('lang', LANG.ES);
+            window?.localStorage.setItem('lang', LANG.ES);
+            i18next.changeLanguage(LANG.ES);
         },
         setEnglish: (state) => {
             state.lang = LANG.EN
-            localStorage.setItem('lang', LANG.EN);
+            window?.localStorage.setItem('lang', LANG.EN);
+            i18next.changeLanguage(LANG.EN);
         }
     }
 });
