@@ -1,6 +1,7 @@
 import "./globals.css";
 import "primereact/resources/themes/lara-light-cyan/theme.css";
 import "primereact/resources/primereact.min.css";
+import { Providers } from '@/redux/providers'
 
 export default function RootLayout({
   children,
@@ -9,8 +10,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        {children}
+      <body className="bg-white dark:bg-black">
+        <Providers>
+          { children }
+        </Providers>
       </body>
     </html>
   );
