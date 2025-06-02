@@ -1,5 +1,5 @@
 import { THEMENAME } from '@/utils/const/theme';
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const initialState = {
     themeName: THEMENAME.LIGHT
@@ -7,22 +7,24 @@ const initialState = {
 
 export const themeSlice = createSlice({
     name: "theme",
-    initialState: window?.localStorage.getItem('theme') ? { themeName: window?.localStorage.getItem('theme') } : initialState,
+    initialState: initialState,
     reducers: {
-        setLight: (state) => {
-            state.themeName = THEMENAME.LIGHT
-            window?.localStorage.setItem('theme', THEMENAME.LIGHT);
-            document.documentElement.classList.remove('dark');
-            document.documentElement.classList.add('light');
-        },
-        setDark: (state) => {
-            state.themeName = THEMENAME.DARK
-            window?.localStorage.setItem('theme', THEMENAME.DARK);
-            document.documentElement.classList.remove('light');
-            document.documentElement.classList.add('dark');
+        setThemeName: (state, action: PayloadAction<{theme: string}>) => {
+            const { theme } = action.payload;
+            state.themeName = theme;
+            if (typeof window !== 'undefined') {
+                window.localStorage.setItem('theme', theme);
+            }
+            if (theme === THEMENAME.LIGHT) {
+                document.documentElement.classList.remove('dark');
+                document.documentElement.classList.add('light');
+            } else {
+                document.documentElement.classList.remove('light');
+                document.documentElement.classList.add('dark');
+            }
         }
     }
 });
 
-export const { setLight, setDark } = themeSlice.actions;
+export const { setThemeName } = themeSlice.actions;
 export default themeSlice.reducer;

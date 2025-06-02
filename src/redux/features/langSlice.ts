@@ -1,5 +1,5 @@
 import { LANG } from '@/utils/const/lang';
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import i18next from '@/utils/i18n/i18n'
 
 const initialState = {
@@ -8,20 +8,18 @@ const initialState = {
 
 export const langSlice = createSlice({
     name: "lang",
-    initialState: window?.localStorage.getItem('lang') ? { lang: window?.localStorage.getItem('lang') } : initialState,
+    initialState: initialState,
     reducers: {
-        setSpanish: (state) => {
-            state.lang = LANG.ES;
-            window?.localStorage.setItem('lang', LANG.ES);
-            i18next.changeLanguage(LANG.ES);
-        },
-        setEnglish: (state) => {
-            state.lang = LANG.EN
-            window?.localStorage.setItem('lang', LANG.EN);
-            i18next.changeLanguage(LANG.EN);
+        setLanguage: (state, action: PayloadAction<{lang: string}>) => {
+            const { lang } = action.payload;
+            state.lang = lang;
+            i18next.changeLanguage(lang);
+            if (typeof window !== 'undefined') {
+                window.localStorage.setItem('lang', lang);
+            }
         }
     }
 });
 
-export const { setSpanish, setEnglish } = langSlice.actions;
+export const { setLanguage } = langSlice.actions;
 export default langSlice.reducer;

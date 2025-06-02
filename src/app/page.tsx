@@ -1,6 +1,6 @@
 "use client";
-import { setEnglish, setSpanish } from '@/redux/features/langSlice';
-import { setDark, setLight } from '@/redux/features/themeSlice';
+import { setLanguage } from '@/redux/features/langSlice';
+import { setThemeName } from '@/redux/features/themeSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { LANG } from '@/utils/const/lang';
 import { THEMENAME } from '@/utils/const/theme';
@@ -20,11 +20,8 @@ export default function Home() {
 
   const setTheme = (isDark: boolean) => {
     setIsThemeChecked(isDark);
-    if (isDark) {
-      dispatch(setDark());
-    } else {
-      dispatch(setLight());
-    }
+    const theme = isDark ? THEMENAME.DARK : THEMENAME.LIGHT;
+    dispatch(setThemeName({theme}));
   };
 
   const handleIsLanguageCheck = (e: {target: {value: boolean | string}} | React.ChangeEvent<HTMLInputElement>) => {
@@ -34,11 +31,8 @@ export default function Home() {
 
   const setLang = (isEnglish: boolean) => {
     setIsLanguageChecked(isEnglish);
-    if (isEnglish) {
-      dispatch(setEnglish());
-    } else {
-      dispatch(setSpanish());
-    }
+    const lang = isEnglish ? LANG.EN : LANG.ES;
+    dispatch(setLanguage({lang}));
   };
 
   const theme = useAppSelector(state => state.themeReducer.themeName )
@@ -46,8 +40,16 @@ export default function Home() {
   const dispatch = useAppDispatch()
 
   useEffect(() => {
-    setTheme(theme === THEMENAME.DARK);
-    setLang(language === LANG.EN);
+    if (window.localStorage.getItem('lang')) {
+      setLang(window.localStorage.getItem('lang') === LANG.EN);
+    } else {
+      setLang(true);
+    }
+    if (window.localStorage.getItem('theme')) {
+      setTheme(window.localStorage.getItem('theme') === THEMENAME.DARK);
+    } else {
+      setTheme(false);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
