@@ -15,8 +15,12 @@ export default function Home() {
   
   const handleIsThemeCheck = (e: {target: {value: boolean | string}} | React.ChangeEvent<HTMLInputElement>) => {
     const value: boolean = e.target.value ? !!(e.target.value) === true : false;
-    setIsThemeChecked(value);
-    if (value) {
+    setTheme(value);
+  };
+
+  const setTheme = (isDark: boolean) => {
+    setIsThemeChecked(isDark);
+    if (isDark) {
       dispatch(setDark());
     } else {
       dispatch(setLight());
@@ -25,8 +29,12 @@ export default function Home() {
 
   const handleIsLanguageCheck = (e: {target: {value: boolean | string}} | React.ChangeEvent<HTMLInputElement>) => {
     const value: boolean = e.target.value ? !!(e.target.value) === true : false;
-    setIsLanguageChecked(value);
-    if (value) {
+    setLang(value);
+  };
+
+  const setLang = (isEnglish: boolean) => {
+    setIsLanguageChecked(isEnglish);
+    if (isEnglish) {
       dispatch(setEnglish());
     } else {
       dispatch(setSpanish());
@@ -38,9 +46,10 @@ export default function Home() {
   const dispatch = useAppDispatch()
 
   useEffect(() => {
-    handleIsThemeCheck({target : {value: theme === THEMENAME.DARK}});
-    handleIsLanguageCheck({target: {value: language === LANG.EN}});
-  });
+    setTheme(theme === THEMENAME.DARK);
+    setLang(language === LANG.EN);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
