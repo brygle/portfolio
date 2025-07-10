@@ -13,7 +13,10 @@ export const langSlice = createSlice({
         setLanguage: (state, action: PayloadAction<{lang: string}>) => {
             const { lang } = action.payload;
             state.lang = lang;
-            i18next.changeLanguage(lang);
+            const time = i18next.isInitialized ? 0 : 5000;
+            setTimeout(() => {
+                i18next.changeLanguage(lang);
+            }, time);
             if (typeof window !== 'undefined') {
                 window.localStorage.setItem('lang', lang);
             }

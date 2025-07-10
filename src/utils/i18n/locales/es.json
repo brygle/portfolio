@@ -1,5 +1,13 @@
 {
     "translation": {
-        "Welcome to React": "Bienvenido a React y react-i18next"
+        "Welcome to React": "Bienvenido a React y react-i18next",
+        "navbar": {
+            "menu-home": "Inicio",
+            "menu-about": "Acerca de mí",
+            "menu-studies": "Títulos",
+            "menu-skills": "Habilidades",
+            "menu-experience": "Exp. Laboral",
+            "menu-projects": "Proyectos"
+        }
     }
 }
