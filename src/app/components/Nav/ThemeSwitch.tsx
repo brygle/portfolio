@@ -4,11 +4,14 @@ import { InputSwitch } from 'primereact/inputswitch';
 import { useEffect, useState } from "react";
 import { THEMENAME } from "@/utils/const/theme";
 import { setThemeName } from '@/redux/features/themeSlice';
+import { useTranslation } from 'react-i18next';
 
 export default function ThemeSwitch() {
   
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
+  const { t } = useTranslation();
   const [isThemeChecked, setIsThemeChecked] = useState<boolean>(false);
+  const [tooltipTheme, setTooltipTheme] = useState('');
 
   const handleIsThemeCheck = (e: {target: {value: boolean | string}} | React.ChangeEvent<HTMLInputElement>) => {
     const value: boolean = e.target.value ? !!(e.target.value) === true : false;
@@ -19,6 +22,7 @@ export default function ThemeSwitch() {
     setIsThemeChecked(isDark);
     const theme = isDark ? THEMENAME.DARK : THEMENAME.LIGHT;
     dispatch(setThemeName({theme}));
+    setTooltipTheme(isDark ? t('navbar.menu-switch-theme-light') : t('navbar.menu-switch-theme-dark'));
   };
 
   useEffect(() => {
@@ -31,6 +35,6 @@ export default function ThemeSwitch() {
   }, []);
 
   return (
-    <InputSwitch checked={isThemeChecked} onChange={handleIsThemeCheck } />
+    <InputSwitch checked={isThemeChecked} onChange={handleIsThemeCheck } tooltip={tooltipTheme} tooltipOptions={{ position: 'bottom' }}/>
   );
 }

@@ -7,7 +7,11 @@
             "menu-studies": "Títulos",
             "menu-skills": "Habilidades",
             "menu-experience": "Exp. Laboral",
-            "menu-projects": "Proyectos"
+            "menu-projects": "Proyectos",
+            "menu-switch-lang-es": "Español",
+            "menu-switch-lang-en": "Inglés",
+            "menu-switch-theme-dark": "Oscuro",
+            "menu-switch-theme-light": "Claro"
         }
     }
 }

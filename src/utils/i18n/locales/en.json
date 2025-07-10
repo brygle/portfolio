@@ -7,7 +7,11 @@
             "menu-studies": "Studies",
             "menu-skills": "Skills",
             "menu-experience": "Experience",
-            "menu-projects": "Projects"
+            "menu-projects": "Projects",
+            "menu-switch-lang-es": "Spanish",
+            "menu-switch-lang-en": "English",
+            "menu-switch-theme-dark": "Dark",
+            "menu-switch-theme-light": "Light"
         }
     }
 }

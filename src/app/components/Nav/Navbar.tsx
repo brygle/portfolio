@@ -42,8 +42,8 @@ export default function Navbar() {
   return (
     <header>
         <nav>
-            <div className="grid grid-cols-[1fr_60px_60px]">
-                <Menubar className="rounded-none dark:bg-black" model={items} />
+            <div className="grid grid-cols-[1fr_90px_90px]">
+                <Menubar className="dark:bg-black" model={items} />
                 <div className="w-full flex items-center justify-center">
                   <ThemeSwitch></ThemeSwitch>
                 </div>
