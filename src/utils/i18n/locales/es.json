@@ -12,6 +12,13 @@
             "menu-switch-lang-en": "Inglés",
             "menu-switch-theme-dark": "Oscuro",
             "menu-switch-theme-light": "Claro"
+        },
+        "about": {
+            "introduce": "Hola, soy Bryan Echeverría",
+            "welcome": "Bienvenido a mi portafolio",
+            "name": "Bryan Gustavo López Echeverría",
+            "city": "Ciudad de Guatemala",
+            "ocupation": "Ingeniero en Ciencias y Sistemas"
         }
     }
 }

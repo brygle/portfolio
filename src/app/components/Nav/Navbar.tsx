@@ -40,10 +40,10 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header>
+    <header className='mb-[40px] lg:mb-[48px] sticky top-0'>
         <nav>
             <div className="grid grid-cols-[1fr_90px_90px]">
-                <Menubar className="dark:bg-black" model={items} />
+                <Menubar model={items} />
                 <div className="w-full flex items-center justify-center">
                   <ThemeSwitch></ThemeSwitch>
                 </div>

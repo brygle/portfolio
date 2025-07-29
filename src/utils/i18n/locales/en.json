@@ -12,6 +12,13 @@
             "menu-switch-lang-en": "English",
             "menu-switch-theme-dark": "Dark",
             "menu-switch-theme-light": "Light"
+        },
+        "about": {
+            "introduce": "Hi, I'm Bryan Echeverría",
+            "welcome": "Welcome to my portfolio",
+            "name": "Bryan Gustavo López Echeverría",
+            "city": "Guatemala City",
+            "ocupation": "Software Engineer"
         }
     }
 }

@@ -1,11 +1,20 @@
 "use client";
 import { useTranslation } from 'react-i18next';
+import About from './components/Sections/About';
+import Studies from './components/Sections/Studies';
+import Skills from './components/Sections/Skills';
+import Experience from './components/Sections/Experience';
+import Projects from './components/Sections/Projects';
 
 export default function Home() {
   const { t } = useTranslation();
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <p>{t('Welcome to React')}</p>
-    </div>
+    <>
+      <About></About>
+      <Studies></Studies>
+      <Skills></Skills>
+      <Experience></Experience>
+      <Projects></Projects>
+    </>
   );
 }
