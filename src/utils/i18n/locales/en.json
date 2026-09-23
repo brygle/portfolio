@@ -19,6 +19,20 @@
             "name": "Bryan Gustavo López Echeverría",
             "city": "Guatemala City",
             "ocupation": "Software Engineer"
+        },
+        "experience": {
+            "title": "Jobs",
+            "frontend": "Frontend developer",
+            "fullstack": "Fullstack developer",
+            "aux": "Teaching assistant",
+            "experience-usac": "Academic tutor in charge of teaching the laboratory course called “Lenguajes formales y de progración”, as well as developing the statements and qualifications of projects and tasks related to the laboratory and assisting the main engineer during the class.",
+            "period-usac": "(July 2021 - May 2022)",
+            "experience-conap": "Responsible in requirements gathering, analysis, design, coding and testing of the registration and monitoring modules of forest management plans from frontend, backend and database.",
+            "period-conap": "(August 2022 - February 2023)",
+            "experience-cian": "Responsible for developing new functionalities, providing support and maintenance to web applications for Intermundial (Insurance agency in Spain).",
+            "period-cian": "(February 2022 - October 2024)",
+            "experience-bi": "Responsible for developing new features and providing support and maintenance to the web consumer loans platform and shared libraries applying standards, unit testing and best practices in develop and security.",
+            "period-bi": "(October 2024 - Currently)"
         }
     }
 }

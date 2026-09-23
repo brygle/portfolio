@@ -19,6 +19,20 @@
             "name": "Bryan Gustavo López Echeverría",
             "city": "Ciudad de Guatemala",
             "ocupation": "Ingeniero en Ciencias y Sistemas"
+        },
+        "experience": {
+            "title": "Experiencia laboral",
+            "frontend": "Desarrollador frontend",
+            "fullstack": "Desarrollador fullstack",
+            "aux": "Auxiliar de cátedra",
+            "experience-usac": "Tutor académico encargado de brindar el laboratorio del curso Lenguajes Formales y de Programación, así como de desarrollar los enunciados y calificaciones de proyectos y tareas relacionadas con el laboratorio y de asistir al ingeniero durante su clase.",
+            "period-usac": "(Julio 2021 - Mayo 2022)",
+            "experience-conap": "Epesista encargado de la toma de requerimientos, análisis, diseño, codificación y pruebas de los módulos de registro y monitoreo de planes de manejo forestal.",
+            "period-conap": "(Agosto 2022 - Febrero 2023)",
+            "experience-cian": "Encargado de desarrollar nuevas funcionalidades, brindar soporte y mantenimiento a aplicaciones web para la agencia de seguros Intermundial (España).",
+            "period-cian": "(Febrero 2022 - Octubre 2024)",
+            "experience-bi": "Responsable del desarrollo de nuevas funcionalidades brindando soporte y mantenimiento a la plataforma de créditos de consumo Guatemala, Bi cotiza y librerías compartidas en Incubadora  Digital.",
+            "period-bi": "(Octubre 2024 - Actualidad)"
         }
     }
 }
