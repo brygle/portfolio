@@ -1,5 +1,6 @@
 import { THEMENAME } from '@/utils/const/theme';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { assetPath } from '@/utils/basePath';
 
 const initialState = {
     themeName: THEMENAME.LIGHT
@@ -30,7 +31,7 @@ export const themeSlice = createSlice({
             const newLink = document.createElement('link');
             newLink.rel = 'stylesheet';
             newLink.id = 'theme-css';
-            newLink.href = `/themes/${cssFileName}/theme.css`; // cargado desde /public
+            newLink.href = assetPath(`/themes/${cssFileName}/theme.css`); // cargado desde /public
             newLink.onload = () => {
             if (existingLink) {
                 existingLink.remove();

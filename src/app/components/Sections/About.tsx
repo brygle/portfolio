@@ -6,6 +6,7 @@ import TitleText from "../Text/TitleText";
 import Text from "../Text/Text";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
+import { assetPath } from "@/utils/basePath";
 
 export default function About() {
 
@@ -18,7 +19,7 @@ export default function About() {
                 <TitleText className="text-center">{t('about.welcome')}</TitleText>
                 <div className="flex flex-col w-full gap-[16px] justify-center items-center md:gap-[64px] md:flex-row">
                     <Image 
-                        src="/bryan.jfif"
+                        src={assetPath("/bryan.jfif")}
                         alt="Me"
                         width={250}
                         height={250}
