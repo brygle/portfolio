@@ -10,10 +10,10 @@ export default function Experience() {
   const { t } = useTranslation();
   
   return (
-    <Section id='experience'>
+    <Section id='experience' className="py-10">
         <div className="w-full flex flex-col justify-center items-center gap-[16px] md:gap-10">
             <TitleText className="text-center">{t('experience.title')}</TitleText>
-            <div className="flex flex-col w-full justify-center items-center md:gap-10">
+            <div className="flex flex-col w-full justify-center items-center gap-10">
                 <div className="flex flex-col gap-[4px] max-w-[600px]">
                     <Text className="font-bold">Banco Industrial S. A.</Text>
                     <Text>{t('experience.period-bi')}</Text>

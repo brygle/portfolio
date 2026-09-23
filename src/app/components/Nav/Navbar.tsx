@@ -18,21 +18,21 @@ export default function Navbar() {
       url: '#about'
     },
     {
-      label: t('navbar.menu-studies'),
-      url: '#studies'
-    },
-    {
-      label: t('navbar.menu-skills'),
-      url: '#skills'
-    },
-    {
       label: t('navbar.menu-experience'),
       url: '#experience'
     },
     {
-      label: t('navbar.menu-projects'),
-      url: '#projects'
+      label: t('navbar.menu-skills'),
+      url: '#skills'
     }
+    // {
+    //   label: t('navbar.menu-studies'),
+    //   url: '#studies'
+    // },
+    // {
+    //   label: t('navbar.menu-projects'),
+    //   url: '#projects'
+    // }
   ]
 
   useEffect(() => {

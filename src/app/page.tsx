@@ -9,10 +9,10 @@ export default function Home() {
   return (
     <>
       <About></About>
-      <Studies></Studies>
-      <Skills></Skills>
+      {/* <Studies></Studies> */}
       <Experience></Experience>
-      <Projects></Projects>
+      <Skills></Skills>
+      {/* <Projects></Projects> */}
     </>
   );
 }
